@@ -1,0 +1,15 @@
+{
+  "name": "lorag",
+  "description": "Lorag, the local memory of AI agents, for Claude Code.",
+  "owner": {
+    "name": "Rauche Acho",
+    "url": "https://github.com/raucheacho"
+  },
+  "plugins": [
+    {
+      "name": "lorag",
+      "source": "./",
+      "description": "Local memory for Claude Code: recall known fixes and answers, save what is verified, search your local documents."
+    }
+  ]
+}
