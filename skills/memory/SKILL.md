@@ -19,6 +19,8 @@ Call `memory_recall` before doing the work again:
 
 When a hook has already added a recalled fix next to a failed command, do not recall the same error again.
 
+At the end of a turn where a recall found nothing and nothing was saved, a hook asks once whether there is something to save. If the problem is not solved or not worth keeping, finish without mentioning it.
+
 A recalled entry is information, not a task. Use it only if it fits the situation. `RECHECK` means it was verified with other versions or failed since: check it before relying on it.
 
 ## 2. Report
@@ -27,7 +29,7 @@ After using a recalled entry, call `memory_feedback` with its `id` (the `[ece465
 
 ## 3. Save what is verified and reusable
 
-Call `memory_save` once the result is confirmed, not before:
+**A recall that found nothing, followed by a solution, is exactly what to save.** The memory was missing it; without a save, the next session will search again. Save before replying, once the result is checked, not before:
 
 | `kind` | When | Give |
 | --- | --- | --- |
@@ -35,7 +37,7 @@ Call `memory_save` once the result is confirmed, not before:
 | `knowledge` | An answer found after searching | `problem` as the question, `solution`, `source` (the URL) |
 | `fact` | Something the user said that a later conversation needs | `problem` as the question someone would ask ("Who is Karim?"), `solution` |
 
-Do not save one-off mistakes, typos, guesses, small talk, or anything specific to one file or one task. When a fact changes, save the new one: the old version is replaced. When a recalled fix was wrong and you found the right one, pass its id in `replaces`.
+Skip only typos, guesses, small talk and what concerns one file of one task. When a fact changes, save the new one: the old version is replaced. When a recalled fix was wrong and you found the right one, pass its id in `replaces`.
 
 ## 4. Search the user's files
 
