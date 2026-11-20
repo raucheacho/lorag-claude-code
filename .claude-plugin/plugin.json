@@ -1,6 +1,6 @@
 {
   "name": "lorag",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Local memory for Claude Code: recall known fixes and answers, save what is verified, search your local documents. Needs Lorag running on localhost:8080.",
   "author": { "name": "Rauche Acho", "url": "https://github.com/raucheacho" },
   "homepage": "https://github.com/raucheacho/lorag",
