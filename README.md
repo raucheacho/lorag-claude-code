@@ -2,7 +2,7 @@
 
 Plugin qui branche Claude Code sur [Lorag](https://github.com/raucheacho/lorag), la mémoire locale des agents. Une seule installation ajoute :
 
-- **le serveur MCP** `lorag` (`http://localhost:8080/mcp`) : `memory_recall`, `memory_save`, `memory_feedback`, `search`, `get_document`, `ingest`, `get_stats` ;
+- **le serveur MCP** `lorag` (`http://localhost:7411/mcp`) : `memory_recall`, `memory_save`, `memory_feedback`, `search`, `get_document`, `ingest`, `get_stats` ;
 - **deux hooks** : quand une commande Bash échoue, Lorag cherche un correctif connu et le place à côté de l'erreur, sans que Claude ait à le demander ; en fin de tour, si un rappel n'a rien trouvé et que rien n'a été enregistré, Claude est invité une fois à enregistrer la solution ;
 - **le skill** `/lorag:memory` : quand rappeler, quand enregistrer un correctif, une réponse ou un fait, quand donner un retour, et quand chercher dans tes documents.
 
@@ -50,10 +50,10 @@ Il ne demande jamais deux fois de suite, et ne fait rien dans tous les autres to
 
 ## Autre port
 
-Le plugin suppose le port 8080. Pour un autre port, ajoute le serveur à la main et désactive celui du plugin :
+Le plugin suppose le port 7411. Pour un autre port, ajoute le serveur à la main et désactive celui du plugin :
 
 ```sh
-claude mcp add --transport http --scope user lorag http://localhost:9090/mcp
+claude mcp add --transport http --scope user lorag http://localhost:7412/mcp
 export LORAG_PORT=9090   # pour loragctl et le hook
 ```
 
