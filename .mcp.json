@@ -1,5 +1,5 @@
 {
   "mcpServers": {
-    "lorag": { "type": "http", "url": "http://localhost:8080/mcp" }
+    "lorag": { "type": "http", "url": "http://localhost:7411/mcp" }
   }
 }
